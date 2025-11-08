@@ -212,12 +212,12 @@
 
         /* Potion Icons Animation */
         .floating-potion {
-            position: fixed;
+            position: absolute;
             font-size: 2rem;
             animation: floatPotion 15s infinite;
             opacity: 0.3;
             pointer-events: none;
-            z-index: -1;
+            z-index: 0;
         }
 
         @keyframes floatPotion {
@@ -264,7 +264,6 @@
         </p>
         <div>
             <a href="#about" class="cta-button">Learn More</a>
-            <a href="#" class="cta-button" onclick="alert('Navigate to Rulebook page in Google Sites'); return false;">View Rulebook</a>
         </div>
         <div class="scroll-indicator"></div>
     </section>
@@ -333,15 +332,6 @@
                     });
                 }
             });
-        });
-
-        // Add parallax effect to hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
         });
     </script>
 </body>
