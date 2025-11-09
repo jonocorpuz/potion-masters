@@ -75,6 +75,91 @@
             align-items: center;
         }
 
+        .nav-item {
+            position: relative;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle {
+            font-family: 'Fredoka', sans-serif;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0.7rem 1.3rem;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .dropdown-toggle::after {
+            content: '▼';
+            font-size: 0.7rem;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown.active .dropdown-toggle::after {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            left: 0;
+            min-width: 200px;
+            background: rgba(30, 58, 138, 0.95);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-radius: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5),
+                        0 0 20px rgba(255, 215, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1001;
+            overflow: hidden;
+        }
+
+        .dropdown.active .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            color: #ffffff;
+            text-decoration: none;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(255, 215, 0, 0.2);
+            padding-left: 2rem;
+        }
+
         .nav-link {
             font-family: 'Fredoka', sans-serif;
             color: #ffffff;
@@ -89,6 +174,7 @@
             backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
+            display: block;
         }
 
         .nav-link::before {
@@ -470,6 +556,25 @@
                 padding: 1rem;
             }
 
+            .dropdown-toggle {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+                background: rgba(0, 0, 0, 0.3);
+                margin-top: 0.5rem;
+                display: none;
+            }
+
+            .dropdown.active .dropdown-menu {
+                display: block;
+            }
+
             .page-title {
                 font-size: 2.5rem;
             }
@@ -507,12 +612,19 @@
         <div class="nav-container">
             <span class="nav-logo">Potion Masters</span>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="gallery.html" class="nav-link">Visual Gallery</a></li>
-                <li><a href="rulebook.html" class="nav-link active">Rule Book</a></li>
-                <li><a href="flowcharts.html" class="nav-link">Flow Charts</a></li>
-                <li><a href="analysis.html" class="nav-link">Analysis</a></li>
-                <li><a href="meetings.html" class="nav-link">Group Meetings</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="gallery.html" class="nav-link">Visual Gallery</a></li>
+                <li class="nav-item"><a href="rulebook.html" class="nav-link active">Rule Book</a></li>
+                <li class="nav-item"><a href="flowcharts.html" class="nav-link">Flow Charts</a></li>
+                <li class="nav-item dropdown">
+                    <span class="dropdown-toggle nav-link">Analysis</span>
+                    <div class="dropdown-menu">
+                        <a href="analysis-quantitative.html">Quantitative Analysis</a>
+                        <a href="analysis-dynamics.html">Dynamics</a>
+                        <a href="analysis-dilemmas.html">Dilemmas</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="meetings.html" class="nav-link">Group Meetings</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -844,11 +956,28 @@
             navMenu.classList.toggle('active');
         });
 
-        // Close menu when clicking outside
+        // Dropdown toggle
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach(dropdown => {
+            const toggle = dropdown.querySelector('.dropdown-toggle');
+            toggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                // Close other dropdowns
+                dropdowns.forEach(d => {
+                    if (d !== dropdown) {
+                        d.classList.remove('active');
+                    }
+                });
+                dropdown.classList.toggle('active');
+            });
+        });
+
+        // Close menu and dropdowns when clicking outside
         document.addEventListener('click', (e) => {
             if (!e.target.closest('.navbar')) {
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('active');
+                dropdowns.forEach(d => d.classList.remove('active'));
             }
         });
 
