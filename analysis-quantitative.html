@@ -291,6 +291,91 @@
             opacity: 0.9;
         }
 
+        /* Analysis Content Sections */
+        .analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .analysis-section {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            padding: 2.5rem;
+            border-radius: 30px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            margin-bottom: 2rem;
+        }
+
+        .section-heading {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #FFD700;
+            text-shadow:
+                -2px -2px 0 #1e3a8a,
+                2px -2px 0 #1e3a8a,
+                -2px 2px 0 #1e3a8a,
+                2px 2px 0 #1e3a8a;
+            margin-bottom: 1.5rem;
+        }
+
+        .subsection-heading {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #FFD700;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .analysis-section p, .analysis-section li {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .formula-box {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .probability-list {
+            list-style: none;
+            padding-left: 1rem;
+        }
+
+        .probability-list li {
+            padding: 0.5rem 0;
+        }
+
+        .highlight {
+            color: #FFD700;
+            font-weight: 700;
+        }
+
+        .summary-box {
+            background: rgba(255, 215, 0, 0.15);
+            border: 3px solid rgba(255, 215, 0, 0.4);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-top: 1.5rem;
+        }
+
+        .notes-box {
+            background: rgba(124, 58, 237, 0.15);
+            border: 3px solid rgba(124, 58, 237, 0.4);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-top: 1.5rem;
+        }
+
         /* Floating Decorations */
         .floating-decoration {
             position: fixed;
@@ -409,8 +494,128 @@
     <main class="main-content">
         <h1 class="page-title">Quantitative Analysis</h1>
 
-        <div class="content-placeholder">
-            <p>Quantitative analysis and statistical data will be added here soon!</p>
+        <div class="analysis-container">
+            <!-- Movement Probability Section -->
+            <div class="analysis-section">
+                <h2 class="section-heading">🎲 Movement Probability</h2>
+                <p>Roll 1 Dice to determine the number of spaces you move at the beginning of each turn.</p>
+                <p><strong>Possible Outcomes:</strong> 1, 2, 3, 4, 5, 6</p>
+
+                <div class="formula-box">
+                    <ul class="probability-list">
+                        <li>P(1) = ⅙ = 0.167</li>
+                        <li>P(2) = ⅙ = 0.167</li>
+                        <li>P(3) = ⅙ = 0.167</li>
+                        <li>P(4) = ⅙ = 0.167</li>
+                        <li>P(5) = ⅙ = 0.167</li>
+                        <li>P(6) = ⅙ = 0.167</li>
+                    </ul>
+                </div>
+
+                <p><span class="highlight">Average distance per turn = 3.5 tiles</span></p>
+                <p><span class="highlight">Expected turns to complete a full loop (77 tiles): 77 ÷ 3.5 ≈ 22 turns</span></p>
+            </div>
+
+            <!-- Landing on Tiles Section -->
+            <div class="analysis-section">
+                <h2 class="section-heading">🗺️ Landing on Tiles</h2>
+                <p>Each space on the board has a specific function (Resource, Negative, Blank, or Market).</p>
+                <p>The probabilities are based on the total <strong>77 tiles</strong>:</p>
+
+                <div class="formula-box">
+                    <ul class="probability-list">
+                        <li>P(Resource) = 45/77 = 0.584</li>
+                        <li>P(Negative) = 18/77 = 0.234</li>
+                        <li>P(Blank) = 13/77 = 0.169</li>
+                        <li>P(Market) = 1/77 = 0.013</li>
+                    </ul>
+                </div>
+
+                <p><strong>Expected resource change per tile:</strong></p>
+                <p>(0.584 × +1) + (0.234 × -1) + (0.169 × 0) = <span class="highlight">+0.35 average gain per turn</span></p>
+            </div>
+
+            <!-- Resource Collection and Crafting Section -->
+            <div class="analysis-section">
+                <h2 class="section-heading">⚗️ Resource Collection and Crafting</h2>
+                <p>Players collect resources from tiles and spend them to craft potions.</p>
+                <p>Each potion requires <strong>2–3 resources</strong> depending on its type.</p>
+                <p>Potions can be sold in the Market for <strong>2–4 coins</strong>.</p>
+
+                <div class="summary-box">
+                    <p><strong>Average gain rate:</strong> +0.35 resources/turn</p>
+                    <p>→ 4 resources every ~10 turns</p>
+                    <p>→ enough to craft 1–2 potions per Market visit</p>
+                    <p><strong>Expected turns per Market cycle:</strong> ~6–8 turns</p>
+                    <p><strong>Win condition:</strong> 20 coins</p>
+                    <p>→ reached in about <span class="highlight">2–3 Market cycles (average game length 40–50 minutes)</span></p>
+                </div>
+            </div>
+
+            <!-- Attacking and Defense Events Section -->
+            <div class="analysis-section">
+                <h2 class="section-heading">⚔️ Attacking and Defense Events</h2>
+                <p>Attacks only occur when a player passes or lands on another player's tile.</p>
+                <p>Since the board allows multiple routes and player spread, encounters happen roughly every <strong>6–8 turns</strong>.</p>
+
+                <div class="formula-box">
+                    <ul class="probability-list">
+                        <li>P(Attack opportunity per turn) ≈ 0.12–0.15</li>
+                        <li>P(Defense success with potion) ≈ 0.25</li>
+                    </ul>
+                </div>
+
+                <p><strong>Important:</strong> Coins cannot be stolen, only materials can be lost. This keeps PvP balanced and fair.</p>
+            </div>
+
+            <!-- Crafting Success and Economic Flow Section -->
+            <div class="analysis-section">
+                <h2 class="section-heading">💰 Crafting Success and Economic Flow</h2>
+                <p>Each crafted potion can be exchanged for coins:</p>
+
+                <div class="summary-box">
+                    <p><strong>Average potion value:</strong> 3 coins</p>
+                    <p><strong>Average cost:</strong> 2.5 resources</p>
+                    <p><strong>Coin gain ratio =</strong> 1.2 coins per resource (steady but not overpowered growth)</p>
+                    <br>
+                    <p><strong>Expected crafting frequency:</strong> once every 6–8 turns</p>
+                    <p><strong>Expected coins per Market cycle:</strong> 6–10</p>
+                    <p><strong>Reaching 20 coins:</strong> 2–3 Market cycles</p>
+                </div>
+            </div>
+
+            <!-- Summary Section -->
+            <div class="analysis-section">
+                <h2 class="section-heading">📊 Tile and Gameplay Probabilities Summary</h2>
+
+                <div class="formula-box">
+                    <ul class="probability-list">
+                        <li>Resource Tiles → P(R) = 0.584</li>
+                        <li>Negative Tiles → P(N) = 0.234</li>
+                        <li>Blank Tiles → P(B) = 0.169</li>
+                        <li>Market Tile → P(M) = 0.013</li>
+                        <li>Player Encounter → P(E) = 0.12–0.15</li>
+                        <li>Successful Defense → P(D) = 0.25</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Notes Section -->
+            <div class="analysis-section">
+                <h2 class="section-heading">📝 Additional Notes</h2>
+
+                <div class="notes-box">
+                    <p>There are additional probabilities in gameplay that cannot be easily quantified but affect balance, such as:</p>
+                    <ul>
+                        <li>The chance of a player choosing a high-risk (lava) or safe (forest) route.</li>
+                        <li>The probability of crafting rare potions versus common ones based on materials collected.</li>
+                        <li>The likelihood of player overlap depending on total participants.</li>
+                        <li>Random events like rolling multiple 1's or 6's changing travel efficiency.</li>
+                    </ul>
+                    <br>
+                    <p><strong>Overall Balance:</strong> The game balance depends on both luck and strategy. Dice rolls add randomness, but smart planning around routes, crafting timing, and potion use significantly increase a player's chances of winning.</p>
+                </div>
+            </div>
         </div>
     </main>
 
