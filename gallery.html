@@ -202,8 +202,11 @@
         .gallery-item img {
             width: 100%;
             height: auto;
+            max-height: 400px;
+            object-fit: contain;
             display: block;
             border-bottom: 4px solid rgba(255, 255, 255, 0.3);
+            background: rgba(0, 0, 0, 0.3);
         }
 
         .gallery-item-content {
@@ -301,7 +304,7 @@
 
         .need-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
             list-style: none;
             padding: 0;
@@ -414,7 +417,7 @@
             }
 
             .need-list {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -460,7 +463,6 @@
                 <ul class="need-list">
                     <li>🎲 Board - 1 copy</li>
                     <li>🃏 Cards - 6x of each</li>
-                    <li>🎮 Player Pieces - 1 copy</li>
                     <li>🪙 Game Pieces - 10x of each</li>
                     <li>🎯 Dice - 1 copy</li>
                 </ul>
