@@ -234,6 +234,97 @@
             font-weight: 600;
         }
 
+        /* Gallery Intro Section */
+        .gallery-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            padding: 2.5rem;
+            border-radius: 30px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-intro-description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .download-button {
+            font-family: 'Fredoka', sans-serif;
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #FFD700 0%, #FDB827 100%);
+            color: #1e3a8a;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 20px rgba(253, 184, 39, 0.5),
+                        inset 0 -3px 10px rgba(0, 0, 0, 0.2);
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            margin-bottom: 2rem;
+        }
+
+        .download-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(253, 184, 39, 0.7),
+                        inset 0 -3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .what-you-need {
+            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 25px;
+            border: 3px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .what-you-need h3 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #FFD700;
+            text-shadow:
+                -2px -2px 0 #1e3a8a,
+                2px -2px 0 #1e3a8a,
+                -2px 2px 0 #1e3a8a,
+                2px 2px 0 #1e3a8a;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .need-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .need-list li {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .need-list li:hover {
+            transform: translateY(-2px);
+            border-color: rgba(16, 185, 129, 0.6);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3),
+                        0 0 15px rgba(16, 185, 129, 0.3);
+        }
+
         /* Floating Decorations */
         .floating-decoration {
             position: fixed;
@@ -309,6 +400,22 @@
             .floating-decoration {
                 font-size: 2rem;
             }
+
+            .gallery-intro {
+                padding: 1.5rem;
+            }
+
+            .gallery-intro-description {
+                font-size: 1rem;
+            }
+
+            .what-you-need h3 {
+                font-size: 1.5rem;
+            }
+
+            .need-list {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -341,6 +448,24 @@
     <!-- Main Content -->
     <main class="main-content">
         <h1 class="page-title">Visual Gallery</h1>
+
+        <div class="gallery-intro">
+            <p class="gallery-intro-description">
+                Explore the visual components of Potion Masters! Browse high-quality images of the game board, pieces, and cards. Download everything you need to print and play your own copy.
+            </p>
+            <a href="Boardgame.jpg" download class="download-button">📥 Download All Images</a>
+
+            <div class="what-you-need">
+                <h3>What You Need to Play</h3>
+                <ul class="need-list">
+                    <li>🎲 Board - 1 copy</li>
+                    <li>🃏 Cards - 6x of each</li>
+                    <li>🎮 Player Pieces - 1 copy</li>
+                    <li>🪙 Game Pieces - 10x of each</li>
+                    <li>🎯 Dice - 1 copy</li>
+                </ul>
+            </div>
+        </div>
 
         <div class="gallery-grid">
             <div class="gallery-item">
