@@ -139,6 +139,159 @@
             text-align: center;
         }
 
+        /* Rulebook Styles */
+        .rulebook-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .rule-section {
+            margin-bottom: 1rem;
+        }
+
+        .rule-header {
+            background: rgba(106, 13, 173, 0.3);
+            border: 2px solid rgba(147, 112, 219, 0.4);
+            border-radius: 10px;
+            padding: 1.2rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .rule-header:hover {
+            background: rgba(106, 13, 173, 0.4);
+            border-color: rgba(147, 112, 219, 0.6);
+            box-shadow: 0 4px 15px rgba(106, 13, 173, 0.3);
+        }
+
+        .rule-header.active {
+            background: rgba(106, 13, 173, 0.5);
+            border-color: #ffd700;
+        }
+
+        .rule-title {
+            font-size: 1.3rem;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .rule-icon {
+            font-size: 1.2rem;
+            color: #ffd700;
+            transition: transform 0.3s ease;
+        }
+
+        .rule-header.active .rule-icon {
+            transform: rotate(180deg);
+        }
+
+        .rule-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1.5rem;
+        }
+
+        .rule-content.active {
+            max-height: 5000px;
+            padding: 1.5rem;
+        }
+
+        .rule-text {
+            color: #e6d9ff;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .rule-subsection {
+            margin-left: 1.5rem;
+            margin-top: 1rem;
+            padding-left: 1rem;
+            border-left: 2px solid rgba(147, 112, 219, 0.3);
+        }
+
+        .subsection-header {
+            background: rgba(106, 13, 173, 0.2);
+            border: 1px solid rgba(147, 112, 219, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .subsection-header:hover {
+            background: rgba(106, 13, 173, 0.3);
+            border-color: rgba(147, 112, 219, 0.5);
+        }
+
+        .subsection-header.active {
+            background: rgba(106, 13, 173, 0.4);
+            border-color: #b19cd9;
+        }
+
+        .subsection-title {
+            font-size: 1.1rem;
+            color: #b19cd9;
+            font-weight: bold;
+        }
+
+        .subsection-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .subsection-content.active {
+            max-height: 3000px;
+            margin-top: 0.5rem;
+        }
+
+        .rule-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .rule-list li {
+            color: #e6d9ff;
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .rule-list li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+        }
+
+        .potion-item {
+            background: rgba(0, 0, 0, 0.2);
+            border-left: 3px solid #b19cd9;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+        }
+
+        .potion-name {
+            color: #ffd700;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .potion-details {
+            color: #e6d9ff;
+            line-height: 1.6;
+        }
+
         @media (max-width: 768px) {
             .hamburger {
                 display: flex;
@@ -170,6 +323,23 @@
             .page-title {
                 font-size: 2rem;
             }
+
+            .rule-title {
+                font-size: 1.1rem;
+            }
+
+            .subsection-title {
+                font-size: 1rem;
+            }
+
+            .rule-header, .subsection-header {
+                padding: 1rem;
+            }
+
+            .rule-subsection {
+                margin-left: 0.5rem;
+                padding-left: 0.5rem;
+            }
         }
     </style>
 </head>
@@ -196,7 +366,316 @@
     <!-- Main Content -->
     <main class="main-content">
         <h1 class="page-title">Rule Book</h1>
-        <!-- Content will be added here -->
+
+        <div class="rulebook-container">
+            <!-- 1. Introduction -->
+            <div class="rule-section">
+                <div class="rule-header" onclick="toggleSection(this)">
+                    <span class="rule-title">1. Introduction</span>
+                    <span class="rule-icon">▼</span>
+                </div>
+                <div class="rule-content">
+                    <p class="rule-text">A board game for 2-4 players. You travel around the board with a dice, collect resources, craft potions, and fight other players. In this magical race, you play as a fantasy character who traverses the board and explores its wonders to become the most successful alchemist. Your journey involves moving around the game world, gathering resources, brewing powerful potions, and attacking anybody that stands in your way.</p>
+                    <p class="rule-text">The core objective of the game is to manage your resources, plan strategic movements, and decide the right time to attack your rivals. In the end, your goal is to collect 20 coins.</p>
+                </div>
+            </div>
+
+            <!-- 2. Game Components -->
+            <div class="rule-section">
+                <div class="rule-header" onclick="toggleSection(this)">
+                    <span class="rule-title">2. Game Components</span>
+                    <span class="rule-icon">▼</span>
+                </div>
+                <div class="rule-content">
+                    <ul class="rule-list">
+                        <li>1 Game Board</li>
+                        <li>4 Player Pieces</li>
+                        <li>1 Die</li>
+                        <li>Coins Pieces (in-game currency)</li>
+                        <li>Resource Pieces (materials for potion-making)</li>
+                        <li>Potion Cards (crafted potions)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 3. Getting Started -->
+            <div class="rule-section">
+                <div class="rule-header" onclick="toggleSection(this)">
+                    <span class="rule-title">3. Getting Started</span>
+                    <span class="rule-icon">▼</span>
+                </div>
+                <div class="rule-content">
+                    <ul class="rule-list">
+                        <li>Each player selects a wizard piece and places it in the marketplace at the center of the board.</li>
+                        <li>Potion Cards (Crafted potions) are laid out on the table for all players to view, duplicates of potion cards are stacked on top of each other.</li>
+                        <li>Resource pieces (materials for potion-making) are organized on the table such that every piece is easy to access throughout the game.</li>
+                        <li>Each player starts with 0 coins, 0 resources, and 0 potions.</li>
+                        <li>Turn order is decided before the players start the game</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 4. Gameplay -->
+            <div class="rule-section">
+                <div class="rule-header" onclick="toggleSection(this)">
+                    <span class="rule-title">4. Gameplay</span>
+                    <span class="rule-icon">▼</span>
+                </div>
+                <div class="rule-content">
+
+                    <!-- 4.1 Turn Order -->
+                    <div class="rule-subsection">
+                        <div class="subsection-header" onclick="toggleSubsection(this)">
+                            <span class="subsection-title">4.1 Turn Order</span>
+                            <span class="rule-icon">▼</span>
+                        </div>
+                        <div class="subsection-content">
+
+                            <!-- 4.1.1 Action Phase -->
+                            <div class="rule-subsection">
+                                <div class="subsection-header" onclick="toggleSubsection(this)">
+                                    <span class="subsection-title">4.1.1 Action Phase</span>
+                                    <span class="rule-icon">▼</span>
+                                </div>
+                                <div class="subsection-content">
+                                    <ul class="rule-list">
+                                        <li>The player may choose to either use a potion against an opponent before moving their piece, or if they are in the market area, they can use their turn to craft potions.</li>
+                                        <li>If a player passes by or lands on another player's space, they also have the choice to use a potion against that player.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- 4.1.2 Movement Phase -->
+                            <div class="rule-subsection">
+                                <div class="subsection-header" onclick="toggleSubsection(this)">
+                                    <span class="subsection-title">4.1.2 Movement Phase</span>
+                                    <span class="rule-icon">▼</span>
+                                </div>
+                                <div class="subsection-content">
+                                    <ul class="rule-list">
+                                        <li>If a player decides to move, they roll a die to determine the number of spaces they move their wizard around the board.</li>
+                                        <li>The player must move in the same direction they did in their previous turn.</li>
+                                        <li>If a player reaches a junction (1 or more alternative paths), they can choose any path other than the original path they came from.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- 4.1.3 Special Movement -->
+                            <div class="rule-subsection">
+                                <div class="subsection-header" onclick="toggleSubsection(this)">
+                                    <span class="subsection-title">4.1.3 Special Movement</span>
+                                    <span class="rule-icon">▼</span>
+                                </div>
+                                <div class="subsection-content">
+                                    <ul class="rule-list">
+                                        <li>If at any point a player passes by the Market Area, they can choose to stop there, regardless of if their dice goes past it, or honour the dice roll and pass through the market. The market area counts as 1 tile.</li>
+                                        <li>If a player chooses to attack another player, their piece moves to the position their dice rolled to after the player uses their potion(s).</li>
+                                        <li>Once a player has finished their turn in the market, they are able to move in any connecting path they wish regardless of which path they entered the market from.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4.2 Board Spaces -->
+                    <div class="rule-subsection">
+                        <div class="subsection-header" onclick="toggleSubsection(this)">
+                            <span class="subsection-title">4.2 Board Spaces</span>
+                            <span class="rule-icon">▼</span>
+                        </div>
+                        <div class="subsection-content">
+                            <ul class="rule-list">
+                                <li><strong>Resource Space:</strong> Gain 1 of the resource on the resource space</li>
+                                <li><strong>Market Space:</strong> A player here can pass through the space and choose a new direction or they can stop at the market and craft potions. Crafting potions resolve an entire turn, meaning that the player's next turn after arrival is resolved for crafting. Here, a player cannot be attacked.</li>
+                                <li><strong>Negative Tiles:</strong> A player may land on a negative tile. Possible negative tiles include: -1 Mat (Player loses 1 material), -2 Mat (Player loses 2 materials), -1 Pot (Player loses 1 potion). The player can decide which material(s) or potion to give up.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 4.3 Potions -->
+                    <div class="rule-subsection">
+                        <div class="subsection-header" onclick="toggleSubsection(this)">
+                            <span class="subsection-title">4.3 Potions</span>
+                            <span class="rule-icon">▼</span>
+                        </div>
+                        <div class="subsection-content">
+                            <div class="potion-item">
+                                <div class="potion-name">Speed Potion</div>
+                                <div class="potion-details">Get another dice roll this turn. Costs 1 Flower & 1 Grass, worth 2 coins.</div>
+                            </div>
+                            <div class="potion-item">
+                                <div class="potion-name">Invisibility Potion</div>
+                                <div class="potion-details">Immune to negative tiles until the start of next turn. Costs 1 Flower & 1 Honey, worth 2 coins.</div>
+                            </div>
+                            <div class="potion-item">
+                                <div class="potion-name">Defence Potion</div>
+                                <div class="potion-details">Immune to attacks until the start of the next turn. Costs 1 Wood & 1 Honey, worth 3 coins.</div>
+                            </div>
+                            <div class="potion-item">
+                                <div class="potion-name">Teleport Potion</div>
+                                <div class="potion-details">Move to any spot on the board. After being used, the player can continue the turn as if it is a normal turn. Landing on top of a player allows you to use a potion against this player. Upon landing, the player can choose which direction to go. Costs 1 black rock & 1 purple crystal, worth 4 coins.</div>
+                            </div>
+                            <div class="potion-item">
+                                <div class="potion-name">Swap Potion</div>
+                                <div class="potion-details">Swap position with another player. After being used, the player can continue the turn as if it is a normal turn. Both swapped players must continue moving the same direction as the player in the previous position. Costs 1 mushroom & 1 purple rock, worth 3 coins.</div>
+                            </div>
+                            <div class="potion-item">
+                                <div class="potion-name">Poison Potion</div>
+                                <div class="potion-details">Target player losses 2 resources. In order to use this potion, you must be in an attacking position, meaning you must have passed or landed on top of the target player. The target player chooses which 2 resources to give up. Costs 1 mushroom & 1 grass, worth 2 coins.</div>
+                            </div>
+                            <div class="potion-item">
+                                <div class="potion-name">Meteor Potion</div>
+                                <div class="potion-details">Target player losses 4 resources. In order to use this potion, you must be in an attacking position, meaning you must have passed or landed on top of the target player. This potion can be played after a dice is rolled meaning it does not have to be played at the beginning of the player's turn. The target player chooses which 4 resources to give up. Costs 1 black rock & 1 wood, worth 4 coins.</div>
+                            </div>
+                            <div class="potion-item">
+                                <div class="potion-name">Reroll Potion</div>
+                                <div class="potion-details">Allows you to reroll a dice that you have already rolled. This potion can be played after a dice is rolled meaning it does not have to be played at the beginning of the player's turn. Costs 1 mushroom & 1 grass, worth 2 coins.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4.4 Player vs Player -->
+                    <div class="rule-subsection">
+                        <div class="subsection-header" onclick="toggleSubsection(this)">
+                            <span class="subsection-title">4.4 Player vs Player</span>
+                            <span class="rule-icon">▼</span>
+                        </div>
+                        <div class="subsection-content">
+                            <ul class="rule-list">
+                                <li>When a player gains an attacking position on a target player, they have the choice of using either a Poison Potion or a Meteor Potion on this player.</li>
+                                <li>In order to gain an attacking position, a player must pass by this player or land directly on their square. The player can be passed in any direction, either facing each other, or being passed from behind.</li>
+                                <li>The attacking player can use at most 1 potion at a time.</li>
+                                <li>Once a player decides to use a potion against another player, they will continue moving their piece to complete the number of moved tiles decided by the dice.</li>
+                                <li>Players that have used a defense potion since their last turn are immune to any attack until it is their turn again. Once it is their turn again, they may use another defense potion.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 4.5 Crafting -->
+                    <div class="rule-subsection">
+                        <div class="subsection-header" onclick="toggleSubsection(this)">
+                            <span class="subsection-title">4.5 Crafting</span>
+                            <span class="rule-icon">▼</span>
+                        </div>
+                        <div class="subsection-content">
+                            <ul class="rule-list">
+                                <li>Crafting is an action that can only be performed in the market area. It is an exchange of two resources as listed on the card face for 1 copy of the potion card.</li>
+                                <li>Crafting uses an entire player turn.</li>
+                                <li>The player is able to craft as many potions as they would like during their turn spent in the market.</li>
+                                <li>Multiple players can be in the market simultaneously.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Scoring -->
+            <div class="rule-section">
+                <div class="rule-header" onclick="toggleSection(this)">
+                    <span class="rule-title">5. Scoring</span>
+                    <span class="rule-icon">▼</span>
+                </div>
+                <div class="rule-content">
+                    <!-- 5.1 Win Condition -->
+                    <div class="rule-subsection">
+                        <div class="subsection-header" onclick="toggleSubsection(this)">
+                            <span class="subsection-title">5.1 Win Condition</span>
+                            <span class="rule-icon">▼</span>
+                        </div>
+                        <div class="subsection-content">
+                            <p class="rule-text">The winner is the first player to reach 20 coins.</p>
+                        </div>
+                    </div>
+
+                    <!-- 5.2 Coins -->
+                    <div class="rule-subsection">
+                        <div class="subsection-header" onclick="toggleSubsection(this)">
+                            <span class="subsection-title">5.2 Coins</span>
+                            <span class="rule-icon">▼</span>
+                        </div>
+                        <div class="subsection-content">
+                            <ul class="rule-list">
+                                <li>Coins can be earned by selling potions. Selling potions is a financial exchange in which you lose a potion, and gain its value in coins.</li>
+                                <li>A player can only sell coins when in the market area.</li>
+                                <li>A player is able to lose potions and resources through either negative tiles or attacking potions from other players. Coins cannot be lost, they are a secured resource.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Advanced Rules -->
+            <div class="rule-section">
+                <div class="rule-header" onclick="toggleSection(this)">
+                    <span class="rule-title">6. Advanced Rules</span>
+                    <span class="rule-icon">▼</span>
+                </div>
+                <div class="rule-content">
+                    <div class="rule-subsection">
+                        <div class="subsection-header" onclick="toggleSubsection(this)">
+                            <span class="subsection-title">6.1 Potion Usage Per Turn</span>
+                            <span class="rule-icon">▼</span>
+                        </div>
+                        <div class="subsection-content">
+                            <p class="rule-text">A player can use at most 1 "Poison or Meteor" Potion per attack. Other potions have no limit to their usage per turn.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Glossary -->
+            <div class="rule-section">
+                <div class="rule-header" onclick="toggleSection(this)">
+                    <span class="rule-title">7. Glossary</span>
+                    <span class="rule-icon">▼</span>
+                </div>
+                <div class="rule-content">
+                    <div class="potion-item">
+                        <div class="potion-name">Resource Pieces</div>
+                        <div class="potion-details">Materials used for potion crafting.</div>
+                    </div>
+                    <div class="potion-item">
+                        <div class="potion-name">Potion Card</div>
+                        <div class="potion-details">A completed potion with a specific effect that can be used against opponents or for movement/utility.</div>
+                    </div>
+                    <div class="potion-item">
+                        <div class="potion-name">Coins</div>
+                        <div class="potion-details">The in-game currency used to purchase items from Market Cards. Coins cannot be lost; they are a secured resource. They are the basis for a financial victory.</div>
+                    </div>
+                    <div class="potion-item">
+                        <div class="potion-name">Market Area</div>
+                        <div class="potion-details">The central space on the board where players can choose to stop regardless of their dice roll. A player can use their turn to craft potions when their piece is in this area. The market area counts as 1 tile during movement.</div>
+                    </div>
+                    <div class="potion-item">
+                        <div class="potion-name">Crafting</div>
+                        <div class="potion-details">The action of combining Resource Pieces to create a Potion Card. This action can only be taken when a player is in the Market Area.</div>
+                    </div>
+                    <div class="potion-item">
+                        <div class="potion-name">Attacking Position</div>
+                        <div class="potion-details">A state achieved when a player's piece passes by or lands directly on another player's square. This grants the option to use a Poison Potion or Meteor Potion against the target player.</div>
+                    </div>
+                    <div class="potion-item">
+                        <div class="potion-name">Negative Tiles</div>
+                        <div class="potion-details">A space on the board that, when landed on, causes the player to lose materials or potions. Examples include: -1 Mat, -2 Mat, and -1 Pot. The player decides which materials or potions to give up.</div>
+                    </div>
+                    <div class="potion-item">
+                        <div class="potion-name">Junction</div>
+                        <div class="potion-details">A point on the board where a player can choose between one or more alternative paths to continue their movement.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. FAQ -->
+            <div class="rule-section">
+                <div class="rule-header" onclick="toggleSection(this)">
+                    <span class="rule-title">8. FAQ</span>
+                    <span class="rule-icon">▼</span>
+                </div>
+                <div class="rule-content">
+                    <p class="rule-text" style="font-style: italic; color: #b19cd9;">Frequently asked questions will be added here as they arise during gameplay.</p>
+                </div>
+            </div>
+        </div>
     </main>
 
     <script>
@@ -216,6 +695,26 @@
                 hamburger.classList.remove('active');
             }
         });
+
+        // Toggle main rule sections
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            const isActive = header.classList.contains('active');
+
+            // Toggle the clicked section
+            header.classList.toggle('active');
+            content.classList.toggle('active');
+        }
+
+        // Toggle subsections
+        function toggleSubsection(header) {
+            const content = header.nextElementSibling;
+            const isActive = header.classList.contains('active');
+
+            // Toggle the clicked subsection
+            header.classList.toggle('active');
+            content.classList.toggle('active');
+        }
     </script>
 </body>
 </html>
