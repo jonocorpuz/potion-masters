@@ -139,6 +139,56 @@
             text-align: center;
         }
 
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .gallery-item {
+            background: rgba(106, 13, 173, 0.2);
+            border-radius: 15px;
+            border: 2px solid rgba(147, 112, 219, 0.3);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            border-color: rgba(147, 112, 219, 0.6);
+            box-shadow: 0 10px 30px rgba(106, 13, 173, 0.5);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item-title {
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 1.3rem;
+            color: #ffd700;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-description {
+            padding: 0 1.5rem 1.5rem;
+            text-align: center;
+            color: #e6d9ff;
+            line-height: 1.6;
+        }
+
         @media (max-width: 768px) {
             .hamburger {
                 display: flex;
@@ -170,6 +220,11 @@
             .page-title {
                 font-size: 2rem;
             }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -196,7 +251,26 @@
     <!-- Main Content -->
     <main class="main-content">
         <h1 class="page-title">Visual Gallery</h1>
-        <!-- Content will be added here -->
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="Boardgame.png" alt="Potion Masters Board Game">
+                <div class="gallery-item-title">Board Game</div>
+                <p class="gallery-description">The complete Potion Masters game board with all its magical locations and pathways.</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="Boardpieces.png" alt="Potion Masters Game Pieces">
+                <div class="gallery-item-title">Game Pieces</div>
+                <p class="gallery-description">All the mystical game pieces, tokens, and player markers for your adventure.</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="Cards.png" alt="Potion Masters Cards">
+                <div class="gallery-item-title">Game Cards</div>
+                <p class="gallery-description">The enchanted cards featuring potions, quests, and magical resources.</p>
+            </div>
+        </div>
     </main>
 
     <script>
