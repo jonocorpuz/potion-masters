@@ -279,6 +279,19 @@
                         inset 0 -2px 8px rgba(0, 0, 0, 0.2);
         }
 
+        .download-pdf-button.disabled {
+            background: rgba(100, 100, 100, 0.5);
+            color: rgba(255, 255, 255, 0.5);
+            cursor: not-allowed;
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .download-pdf-button.disabled:hover {
+            transform: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
         /* Floating Decorations */
         .floating-decoration {
             position: fixed;
@@ -431,6 +444,42 @@
                     <h3 class="meeting-title">Meeting Minutes #4</h3>
                     <p class="meeting-date">October 25, 2024</p>
                     <a href="IAT 210 - Group Projjj.pdf" download class="download-pdf-button">📥 Download PDF</a>
+                </div>
+            </div>
+
+            <!-- Playtest 1 -->
+            <div class="meeting-card">
+                <div class="meeting-preview">
+                    🎮
+                </div>
+                <div class="meeting-content">
+                    <h3 class="meeting-title">Playtest 1</h3>
+                    <p class="meeting-date">Coming Soon</p>
+                    <span class="download-pdf-button disabled">📥 PDF Coming Soon</span>
+                </div>
+            </div>
+
+            <!-- Playtest 2 -->
+            <div class="meeting-card">
+                <div class="meeting-preview">
+                    🎲
+                </div>
+                <div class="meeting-content">
+                    <h3 class="meeting-title">Playtest 2</h3>
+                    <p class="meeting-date">November 2024</p>
+                    <a href="Playtest 2.pdf" download class="download-pdf-button">📥 Download PDF</a>
+                </div>
+            </div>
+
+            <!-- Playtest 3 -->
+            <div class="meeting-card">
+                <div class="meeting-preview">
+                    🎯
+                </div>
+                <div class="meeting-content">
+                    <h3 class="meeting-title">Playtest 3</h3>
+                    <p class="meeting-date">Coming Soon</p>
+                    <span class="download-pdf-button disabled">📥 PDF Coming Soon</span>
                 </div>
             </div>
         </div>
