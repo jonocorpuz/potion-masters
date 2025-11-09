@@ -181,17 +181,21 @@
         .rule-icon {
             font-size: 1.2rem;
             color: #ffd700;
-            transition: transform 0.3s ease;
+            transition: transform 0.6s ease-in-out;
         }
 
         .rule-header.active .rule-icon {
             transform: rotate(180deg);
         }
 
+        .subsection-header.active .rule-icon {
+            transform: rotate(180deg);
+        }
+
         .rule-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
+            transition: max-height 0.6s ease-in-out, padding 0.6s ease-in-out;
             padding: 0 1.5rem;
         }
 
@@ -245,7 +249,7 @@
         .subsection-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
+            transition: max-height 0.6s ease-in-out, margin-top 0.6s ease-in-out;
         }
 
         .subsection-content.active {
