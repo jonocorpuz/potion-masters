@@ -198,6 +198,47 @@
             margin: 0 auto;
         }
 
+        .flowchart-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            padding: 2.5rem;
+            border-radius: 30px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .flowchart-intro-description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .download-button {
+            font-family: 'Fredoka', sans-serif;
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #FFD700 0%, #FDB827 100%);
+            color: #1e3a8a;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 20px rgba(253, 184, 39, 0.5),
+                        inset 0 -3px 10px rgba(0, 0, 0, 0.2);
+            border: 3px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .download-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(253, 184, 39, 0.7),
+                        inset 0 -3px 10px rgba(0, 0, 0, 0.2);
+        }
+
         .flowchart-item {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(20px) saturate(180%);
@@ -208,6 +249,7 @@
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4),
                         0 0 20px rgba(255, 255, 255, 0.1);
+            text-align: center;
         }
 
         .flowchart-item:hover {
@@ -221,6 +263,7 @@
             width: 100%;
             height: auto;
             display: block;
+            margin: 0 auto;
             border-bottom: 4px solid rgba(255, 255, 255, 0.3);
             background: rgba(255, 255, 255, 0.9);
         }
@@ -309,6 +352,22 @@
                 font-size: 2.5rem;
             }
 
+            .flowchart-intro {
+                padding: 1.5rem;
+            }
+
+            .flowchart-intro-description {
+                font-size: 1rem;
+            }
+
+            .flowchart-content {
+                padding: 1.5rem;
+            }
+
+            .flowchart-title {
+                font-size: 1.5rem;
+            }
+
             .floating-decoration {
                 font-size: 2rem;
             }
@@ -344,6 +403,13 @@
     <!-- Main Content -->
     <main class="main-content">
         <h1 class="page-title">Flow Charts</h1>
+
+        <div class="flowchart-intro">
+            <p class="flowchart-intro-description">
+                Explore the game mechanics and flow of Potion Masters through our detailed flowchart diagram.
+            </p>
+            <a href="Baslksz_Diyagram.drawio_4.jpg" download class="download-button">📥 Download Flowchart</a>
+        </div>
 
         <div class="flowchart-container">
             <div class="flowchart-item">
