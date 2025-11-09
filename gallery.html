@@ -141,10 +141,12 @@
 
         /* Gallery Grid */
         .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
             padding: 2rem 0;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .gallery-item {
@@ -222,8 +224,11 @@
             }
 
             .gallery-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
+                gap: 2rem;
+            }
+
+            .gallery-item-title {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -254,19 +259,19 @@
 
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="Boardgame.png" alt="Potion Masters Board Game">
+                <img src="Boardgame.jpg" alt="Potion Masters Board Game">
                 <div class="gallery-item-title">Board Game</div>
                 <p class="gallery-description">The complete Potion Masters game board with all its magical locations and pathways.</p>
             </div>
 
             <div class="gallery-item">
-                <img src="Boardpieces.png" alt="Potion Masters Game Pieces">
+                <img src="Boardpieces.jpg" alt="Potion Masters Game Pieces">
                 <div class="gallery-item-title">Game Pieces</div>
                 <p class="gallery-description">All the mystical game pieces, tokens, and player markers for your adventure.</p>
             </div>
 
             <div class="gallery-item">
-                <img src="Cards.png" alt="Potion Masters Cards">
+                <img src="Cards.jpg" alt="Potion Masters Cards">
                 <div class="gallery-item-title">Game Cards</div>
                 <p class="gallery-description">The enchanted cards featuring potions, quests, and magical resources.</p>
             </div>
