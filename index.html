@@ -291,147 +291,6 @@
             transform: translateY(-2px) scale(1.02);
         }
 
-        /* Quick Info Cards - Glassmorphic */
-        .quick-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            padding: 4rem 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .info-card {
-            background: rgba(255, 255, 255, 0.12);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            padding: 2.5rem;
-            border-radius: 30px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
-                        0 0 20px rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .info-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .info-card:hover::before {
-            opacity: 1;
-        }
-
-        .info-card:hover {
-            transform: translateY(-10px) scale(1.03);
-            border-color: rgba(255, 215, 0, 0.6);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4),
-                        0 0 30px rgba(255, 215, 0, 0.4);
-        }
-
-        .info-card h3 {
-            font-family: 'Fredoka', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: #FFD700;
-            text-shadow:
-                -2px -2px 0 #1e3a8a,
-                2px -2px 0 #1e3a8a,
-                -2px 2px 0 #1e3a8a,
-                2px 2px 0 #1e3a8a;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        .info-card p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            font-weight: 600;
-        }
-
-        .icon {
-            font-size: 2.5rem;
-            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
-        }
-
-        /* Features Section */
-        .features {
-            padding: 5rem 2rem;
-            background: rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .features h2 {
-            font-family: 'Fredoka', sans-serif;
-            text-align: center;
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: #FFD700;
-            text-shadow:
-                -3px -3px 0 #1e3a8a,
-                3px -3px 0 #1e3a8a,
-                -3px 3px 0 #1e3a8a,
-                3px 3px 0 #1e3a8a,
-                0 0 30px rgba(255, 215, 0, 0.6);
-            margin-bottom: 3rem;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .feature-item {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            text-align: center;
-            padding: 2.5rem;
-            border-radius: 30px;
-            border: 3px solid rgba(255, 255, 255, 0.25);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .feature-item:hover {
-            transform: translateY(-8px);
-            border-color: rgba(255, 215, 0, 0.5);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4),
-                        0 0 25px rgba(255, 215, 0, 0.3);
-        }
-
-        .feature-item h4 {
-            font-family: 'Fredoka', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #FFD700;
-            text-shadow: -1px -1px 0 #1e3a8a,
-                         1px -1px 0 #1e3a8a,
-                         -1px 1px 0 #1e3a8a,
-                         1px 1px 0 #1e3a8a;
-            margin-bottom: 1rem;
-        }
-
-        .feature-item p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            font-weight: 600;
-        }
-
         /* Scroll Indicator */
         .scroll-indicator {
             position: absolute;
@@ -449,11 +308,142 @@
             60% { transform: translateX(-50%) translateY(-8px); }
         }
 
-        /* Video Section */
-        .video-section {
+        /* Banner Section */
+        .banner-section {
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .banner-container {
+            border-radius: 30px;
+            overflow: hidden;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4),
+                        0 0 30px rgba(255, 255, 255, 0.1);
+        }
+
+        .banner-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Content Container - Shared */
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section Title - Shared */
+        .section-title {
+            font-family: 'Fredoka', sans-serif;
+            text-align: center;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #FFD700;
+            text-shadow:
+                -3px -3px 0 #1e3a8a,
+                3px -3px 0 #1e3a8a,
+                -3px 3px 0 #1e3a8a,
+                3px 3px 0 #1e3a8a,
+                0 0 30px rgba(255, 215, 0, 0.6);
+            margin-bottom: 3rem;
+        }
+
+        /* Glass Textbox - Shared */
+        .glass-textbox {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            padding: 2.5rem 3rem;
+            border-radius: 30px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+                        0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .glass-textbox p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* Core Statement Section */
+        .core-statement-section {
+            padding: 4rem 2rem;
+        }
+
+        /* Inspiration Section */
+        .inspiration-section {
             padding: 5rem 2rem;
             background: rgba(0, 0, 0, 0.2);
             backdrop-filter: blur(10px);
+        }
+
+        /* Game Pillars Section */
+        .pillars-section {
+            padding: 5rem 2rem;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .pillar-card {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            padding: 2.5rem;
+            border-radius: 30px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+                        0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            border-color: rgba(255, 215, 0, 0.6);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4),
+                        0 0 30px rgba(255, 215, 0, 0.4);
+        }
+
+        .pillar-title {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #FFD700;
+            text-shadow:
+                -2px -2px 0 #1e3a8a,
+                2px -2px 0 #1e3a8a,
+                -2px 2px 0 #1e3a8a,
+                2px 2px 0 #1e3a8a;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .pillar-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* Thematic Backstory Section */
+        .backstory-section {
+            padding: 5rem 2rem;
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 5rem 2rem;
         }
 
         .video-container {
@@ -551,15 +541,6 @@
                 font-size: 1.5rem;
             }
 
-            .tagline {
-                font-size: 1.1rem;
-                padding: 1.5rem;
-            }
-
-            .quick-info {
-                grid-template-columns: 1fr;
-            }
-
             .hamburger {
                 display: flex;
             }
@@ -594,8 +575,24 @@
                 align-items: center;
             }
 
-            .features h2 {
+            .banner-section {
+                padding: 1rem;
+            }
+
+            .section-title {
                 font-size: 2.5rem;
+            }
+
+            .glass-textbox {
+                padding: 1.5rem 2rem;
+            }
+
+            .glass-textbox p {
+                font-size: 1rem;
+            }
+
+            .pillars-grid {
+                grid-template-columns: 1fr;
             }
 
             .video-title {
@@ -648,55 +645,24 @@
     <section class="hero">
         <h1 class="game-title">Potion Masters</h1>
         <p class="subtitle">A Magical Potion-Crafting Adventure</p>
-        <p class="tagline">
-            Travel the realm, collect mystical resources, craft powerful potions,
-            and outwit your rivals in this enchanting board game for 2-4 players!
-        </p>
         <div class="cta-buttons">
-            <a href="#about" class="cta-button">Learn More</a>
+            <a href="#banner" class="cta-button">Learn More</a>
         </div>
         <div class="scroll-indicator">↓</div>
     </section>
 
-    <!-- Quick Info Cards -->
-    <section class="quick-info" id="about">
-        <div class="info-card">
-            <h3><span class="icon">👥</span> Players</h3>
-            <p>2-4 aspiring wizards compete for magical supremacy</p>
-        </div>
-        <div class="info-card">
-            <h3><span class="icon">⏱️</span> Duration</h3>
-            <p>30-60mins of strategic spell-casting</p>
-        </div>
-        <div class="info-card">
-            <h3><span class="icon">🎯</span> Objective</h3>
-            <p>Collect resources, craft potions, complete quests, and be the last wizard standing!</p>
-        </div>
-        <div class="info-card">
-            <h3><span class="icon">🎲</span> Gameplay</h3>
-            <p>Roll dice, move strategically, trade wisely, and brew victory!</p>
+    <!-- Banner Section -->
+    <section class="banner-section" id="banner">
+        <div class="banner-container">
+            <img src="banner.png" alt="Potion Masters Banner" class="banner-image">
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
-        <h2>Game Highlights</h2>
-        <div class="feature-grid">
-            <div class="feature-item">
-                <h4>🧪 Potion Crafting</h4>
-                <p>Combine rare resources to create powerful potions with unique effects</p>
-            </div>
-            <div class="feature-item">
-                <h4>🏪 Dynamic Market</h4>
-                <p>Buy and sell resources at the marketplace to gain strategic advantages</p>
-            </div>
-            <div class="feature-item">
-                <h4>⚔️ Wizard Battles</h4>
-                <p>Use attack potions and defensive spells to sabotage rivals</p>
-            </div>
-            <div class="feature-item">
-                <h4>🎨 Beautiful Design</h4>
-                <p>Immerse yourself in a world of magical artwork and thematic gameplay</p>
+    <!-- Core Statement Section -->
+    <section class="core-statement-section">
+        <div class="content-container">
+            <div class="glass-textbox">
+                <p>A turn-based board game where players roll dice, collect resources, craft and battle others to become the first to earn enough gold to win.</p>
             </div>
         </div>
     </section>
@@ -710,6 +676,47 @@
                     <span class="video-icon">🎬</span>
                     <p class="video-text">Video Coming Soon</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inspiration Section -->
+    <section class="inspiration-section">
+        <div class="content-container">
+            <h2 class="section-title">Inspiration</h2>
+            <div class="glass-textbox">
+                <p>Potion masters is a game that draws inspiration from the competitive and lively gameplay of games like Mario Party as players traverse through the never-ending paths. Players can hinder each other's journey as they race to get ahead. Potion masters material gathering and crafting mechanics adapts elements from games like stardew valley and minecraft. It's a blend of creativity, rivalry, luck and strategy. We strive to bring a game that promotes friendly competition in a light-hearted fantasy inspired adventure.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Pillars Section -->
+    <section class="pillars-section">
+        <div class="content-container">
+            <h2 class="section-title">Game Pillars</h2>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <h3 class="pillar-title">What</h3>
+                    <p>Potion Masters is a fantasy-based crafting and strategy game where players traverse across the map to gather materials, craft potions, and compete to earn the most coins.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3 class="pillar-title">How</h3>
+                    <p>Players engage in strategic decision-making, choosing how to balance potion crafting, resource management, and player interaction to achieve victory.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3 class="pillar-title">Why</h3>
+                    <p>The game is designed to motivate players through creative problem-solving and lighthearted competition, rewarding both strategic play and experimentation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thematic Backstory Section -->
+    <section class="backstory-section">
+        <div class="content-container">
+            <h2 class="section-title">Thematic Backstory</h2>
+            <div class="glass-textbox">
+                <p>In a world filled with magic and the unknown, talented wizards compete with one another for the title of Potion master. Each wizard travels across the land to gather rare ingredients, craft powerful potions, and earn coins to prove their skill. Along their journey, wizards can hinder their competitors with their brewed arsenal. The wizard with the best strategy, and a touch of luck shall be declared as the Potion Master.</p>
             </div>
         </div>
     </section>
