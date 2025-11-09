@@ -48,8 +48,12 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-decoration: none;
             font-family: 'Courier New', monospace;
+        }
+
+        .nav-link.active {
+            color: #ffd700;
+            background: rgba(147, 112, 219, 0.3);
         }
 
         .nav-menu {
@@ -177,12 +181,13 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">Potion Masters</a>
+            <span class="nav-logo">Potion Masters</span>
             <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="gallery.html" class="nav-link">Visual Gallery</a></li>
                 <li><a href="rulebook.html" class="nav-link">Rule Book</a></li>
                 <li><a href="flowcharts.html" class="nav-link active">Flow Charts</a></li>
-                <li><a href="analysis.html" class="nav-link">Quantative Analysis</a></li>
+                <li><a href="analysis.html" class="nav-link">Analysis</a></li>
                 <li><a href="meetings.html" class="nav-link">Group Meetings</a></li>
             </ul>
             <div class="hamburger">
