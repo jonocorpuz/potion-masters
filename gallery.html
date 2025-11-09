@@ -176,8 +176,10 @@
         .gallery-grid {
             display: flex;
             flex-direction: column;
-            gap: 4rem;
+            gap: 2.5rem;
             padding: 2rem 0;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .gallery-item {
@@ -202,7 +204,7 @@
         .gallery-item img {
             width: 100%;
             height: auto;
-            max-height: 400px;
+            max-height: 300px;
             object-fit: contain;
             display: block;
             border-bottom: 4px solid rgba(255, 255, 255, 0.3);
@@ -210,14 +212,14 @@
         }
 
         .gallery-item-content {
-            padding: 2.5rem;
+            padding: 1.5rem;
             background: rgba(0, 0, 0, 0.2);
         }
 
         .gallery-item-title {
             font-family: 'Fredoka', sans-serif;
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
             color: #FFD700;
             text-shadow:
@@ -226,14 +228,14 @@
                 -2px 2px 0 #1e3a8a,
                 2px 2px 0 #1e3a8a,
                 0 0 20px rgba(255, 215, 0, 0.5);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .gallery-description {
             text-align: center;
             color: #ffffff;
-            line-height: 1.8;
-            font-size: 1.2rem;
+            line-height: 1.6;
+            font-size: 1.05rem;
             font-weight: 600;
         }
 
@@ -491,6 +493,14 @@
                 <div class="gallery-item-content">
                     <div class="gallery-item-title">🃏 Game Cards</div>
                     <p class="gallery-description">The enchanted cards featuring potions, quests, and magical resources.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="Dice.jpeg" alt="Potion Masters Dice">
+                <div class="gallery-item-content">
+                    <div class="gallery-item-title">🎲 Dice</div>
+                    <p class="gallery-description">The magical dice used to determine your fate and movement across the board.</p>
                 </div>
             </div>
         </div>
