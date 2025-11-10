@@ -291,6 +291,43 @@
             opacity: 0.9;
         }
 
+        /* Analysis Content Sections */
+        .analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .analysis-section {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            padding: 2.5rem;
+            border-radius: 30px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            margin-bottom: 2rem;
+        }
+
+        .section-heading {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #FFD700;
+            text-shadow:
+                -2px -2px 0 #1e3a8a,
+                2px -2px 0 #1e3a8a,
+                -2px 2px 0 #1e3a8a,
+                2px 2px 0 #1e3a8a;
+            margin-bottom: 1.5rem;
+        }
+
+        .analysis-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
         /* Floating Decorations */
         .floating-decoration {
             position: fixed;
@@ -409,10 +446,18 @@
     <main class="main-content">
         <h1 class="page-title">Trade-offs and Dilemmas</h1>
 
-        <div class="content-placeholder" style="max-width: 1000px;">
-            <p style="text-align: left; margin-bottom: 1.5rem;">Players must decide when to stop at the market to craft and sell potions versus continuing to explore for more resources. Spending time going back to center might be a slow movement but helps prepare for stronger turns later. Using powerful potions like teleport or swap can give a huge advantage to players. They also face tough choices between saving resources for coins or spending them to safely travel around the map and use it on attack or defense against the other players. Every turn becomes a balance between safety, speed, and risk.</p>
+        <div class="analysis-container">
+            <!-- Strategic Decisions Section -->
+            <div class="analysis-section">
+                <h2 class="section-heading">⚖️ Strategic Decisions</h2>
+                <p>Players must decide when to stop at the market to craft and sell potions versus continuing to explore for more resources. Spending time going back to center might be a slow movement but helps prepare for stronger turns later. Using powerful potions like teleport or swap can give a huge advantage to players. They also face tough choices between saving resources for coins or spending them to safely travel around the map and use it on attack or defense against the other players. Every turn becomes a balance between safety, speed, and risk.</p>
+            </div>
 
-            <p style="text-align: left; margin-bottom: 0;">During the late game, it gets more intense and players will begin to target other players who are close to winning. This can give opportunities for the remaining players to catch up, as resources/potions are being used to hinder those opponents. Overall this can extend the game session, but also bring everyone closer to the same stage towards completion.</p>
+            <!-- Late Game Dynamics Section -->
+            <div class="analysis-section">
+                <h2 class="section-heading">🎯 Late Game Dynamics</h2>
+                <p>During the late game, it gets more intense and players will begin to target other players who are close to winning. This can give opportunities for the remaining players to catch up, as resources/potions are being used to hinder those opponents. Overall this can extend the game session, but also bring everyone closer to the same stage towards completion.</p>
+            </div>
         </div>
     </main>
 
