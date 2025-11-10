@@ -291,6 +291,43 @@
             opacity: 0.9;
         }
 
+        /* Analysis Content Sections */
+        .analysis-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .analysis-section {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            padding: 2.5rem;
+            border-radius: 30px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            margin-bottom: 2rem;
+        }
+
+        .section-heading {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #FFD700;
+            text-shadow:
+                -2px -2px 0 #1e3a8a,
+                2px -2px 0 #1e3a8a,
+                -2px 2px 0 #1e3a8a,
+                2px 2px 0 #1e3a8a;
+            margin-bottom: 1.5rem;
+        }
+
+        .analysis-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
         /* Floating Decorations */
         .floating-decoration {
             position: fixed;
@@ -409,14 +446,30 @@
     <main class="main-content">
         <h1 class="page-title">Dynamics</h1>
 
-        <div class="content-placeholder" style="max-width: 1000px;">
-            <p style="text-align: left; margin-bottom: 1.5rem;">Players who collect resources early, craft valuable Potions, and sell them at the right moment usually succeed. Managing resources carefully and using defense potions wisely before possible battles helps players prevent losses. Moving smartly around the board, planning routes and using invisibility potion on the risky paths makes it easier to earn enough gold to win.</p>
+        <div class="analysis-container">
+            <!-- Strategic Success Section -->
+            <div class="analysis-section">
+                <h2 class="section-heading">🎯 Strategic Success</h2>
+                <p>Players who collect resources early, craft valuable Potions, and sell them at the right moment usually succeed. Managing resources carefully and using defense potions wisely before possible battles helps players prevent losses. Moving smartly around the board, planning routes and using invisibility potion on the risky paths makes it easier to earn enough gold to win.</p>
+            </div>
 
-            <p style="text-align: left; margin-bottom: 1.5rem;">Luck plays a factor in the game. Players advance by rolling a 6-sided dice, depending on where a player lands, it can affect the trajectory of their strategy. As players can land on negative spaces causing the loss of materials/potions but these spaces are more potent in areas with higher rewards.</p>
+            <!-- Luck Factor Section -->
+            <div class="analysis-section">
+                <h2 class="section-heading">🎲 Luck Factor</h2>
+                <p>Luck plays a factor in the game. Players advance by rolling a 6-sided dice, depending on where a player lands, it can affect the trajectory of their strategy. As players can land on negative spaces causing the loss of materials/potions but these spaces are more potent in areas with higher rewards.</p>
+            </div>
 
-            <p style="text-align: left; margin-bottom: 1.5rem;">Player hindrance is a core aspect of the game. While players are trying to gain a lead over each other, sabotaging the competition is one way to stay ahead, or prevent others from reaching the goal first.</p>
+            <!-- Player Hindrance Section -->
+            <div class="analysis-section">
+                <h2 class="section-heading">⚔️ Player Hindrance</h2>
+                <p>Player hindrance is a core aspect of the game. While players are trying to gain a lead over each other, sabotaging the competition is one way to stay ahead, or prevent others from reaching the goal first.</p>
+            </div>
 
-            <p style="text-align: left; margin-bottom: 0;">With a variety of paths for players to choose, and a mix of potions to craft using different materials sourced in separate areas of the map, each gaming session can offer a unique experience for each player as they develop their winning strategies.</p>
+            <!-- Unique Experiences Section -->
+            <div class="analysis-section">
+                <h2 class="section-heading">✨ Unique Experiences</h2>
+                <p>With a variety of paths for players to choose, and a mix of potions to craft using different materials sourced in separate areas of the map, each gaming session can offer a unique experience for each player as they develop their winning strategies.</p>
+            </div>
         </div>
     </main>
 
